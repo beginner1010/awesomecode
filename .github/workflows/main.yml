@@ -9,7 +9,9 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-
+    
+    - name: install dependencies
+      run: sudo apt-get install --yes python-virtualenv
     - name: setup venv
       run: virtualenv -p /usr/bin/python3.7 ./venv
     - name: install
