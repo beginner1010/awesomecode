@@ -1,22 +1,12 @@
-name: Install and test
-
-on: [push]
-
+on: push
+name: on push
 jobs:
-  build:
-
+  gitHubActionForPytest:
+    name: GitHub Action for pytest
     runs-on: ubuntu-latest
-    
     steps:
-    - uses: actions/setup-python@v1.1.1
+    - uses: actions/checkout@master
+    - name: GitHub Action for pytest
+      uses: cclauss/GitHub-Action-for-pytest@master
       with:
-        python-version: 3.7
-    
-    - name: install dependencies
-      run: sudo apt-get install --yes python-virtualenv
-    - name: setup venv
-      run: cd /home/runner/work/awesomecode && virtualenv -p $(which python) ./venv
-    - name: install
-      run: cd /home/runner/work/awesomecode && source ./venv/bin/activate && ls -lart && ls -lart ../ && ls -lart awesomecode/* && python setup.py develop
-    - name: tests
-      run: cd /home/runner/work/awesomecode && pytest
+        args: pytest -h
