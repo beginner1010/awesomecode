@@ -1,0 +1,15 @@
+name: Triggered on push
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Run setup and tests
+    - uses: actions/setup-python@v1
+      with:
+        python-version: '3.7'
+    - run: python setup.py develop && pytest
