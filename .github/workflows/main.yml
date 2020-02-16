@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Run setup and tests
     - uses: actions/setup-python@v1
+    - name: Run setup and tests
       with:
         python-version: '3.7'
     - run: python setup.py develop && pytest
