@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v1
+    - uses: cclauss/Upgrade-to-Python3@0.1.0
     
     - name: install dependencies
       run: sudo apt-get install --yes python-virtualenv
