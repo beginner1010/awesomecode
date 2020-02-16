@@ -17,6 +17,6 @@ jobs:
     - name: setup venv
       run: virtualenv -p $(which python) ./venv
     - name: install
-      run: cd /home/runner/work/awesomecode/awesomecode && source ./venv/bin/activate && python setup.py develop
+      run: cd /home/runner/work/awesomecode/awesomecode && source ./venv/bin/activate && ls -lart && ls -lart ../ && python setup.py develop
     - name: tests
       run: cd /home/runner/work/awesomecode/awesomecode && pytest
