@@ -17,6 +17,6 @@ jobs:
     - name: setup venv
       run: cd .. && virtualenv -p $(which python) ./venv
     - name: install
-      run: source ./venv/bin/activate && python setup.py develop
+      run: cd .. && source ./venv/bin/activate && python setup.py develop
     - name: tests
-      run: pytest
+      run: cd .. && pytest
