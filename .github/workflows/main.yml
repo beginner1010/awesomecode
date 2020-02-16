@@ -15,8 +15,8 @@ jobs:
     - name: install dependencies
       run: sudo apt-get install --yes python-virtualenv
     - name: setup venv
-      run: cd .. && virtualenv -p $(which python) ./venv
+      run: virtualenv -p $(which python) ./venv
     - name: install
-      run: cd /home/runner/work/awesomecode && source ./venv/bin/activate && python setup.py develop
+      run: cd /home/runner/work/awesomecode/awesomecode && source ./venv/bin/activate && python setup.py develop
     - name: tests
-      run: cd /home/runner/work/awesomecode && pytest
+      run: cd /home/runner/work/awesomecode/awesomecode && pytest
