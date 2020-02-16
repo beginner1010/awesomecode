@@ -19,4 +19,4 @@ jobs:
     - name: install
       run: cd /home/runner/work/awesomecode && source ./venv/bin/activate && python setup.py develop
     - name: tests
-      run: cd .. && pytest
+      run: cd /home/runner/work/awesomecode && pytest
